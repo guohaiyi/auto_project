@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
-from common.httpCofing import RunMethod
+from config.httpCofing import RunMethod
+from config.readConfig import ReadConfig
 from common.readData_xlsx import GetData
 from common.compareResult import CompareResult
 from common.dependData import DependData
-from config.readConfig import ReadConfig
 from common.sendEmail import SendEmail
 import json
 

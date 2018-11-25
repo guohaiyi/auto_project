@@ -44,7 +44,6 @@ class RunMethod:
     #     return res
 
     def run_main(self, method, url, data=None, header=None):
-        res = None
         if method == 'post':
             res = self.post_main(url, data, header)
         elif method == 'get':
@@ -71,7 +70,8 @@ if __name__ == "__main__":
     # GET示例
     _id = "5bf9290d750678077e269623"
     url1 = 'http://192.168.1.188:3002/tenant_admin/' + _id
-    header = {"Content-Type": "application/json", "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcmNfYWRtaW4iLCJhdWQiOiJQYW5lbCIsImlzcyI6IlBhbmVsIiwiaWF0IjoxNTQzMDU4NTQ4fQ.qKvLZNnLrlW7E63f_nDoN1DtawgXJtH3fc1WJ8_TtRo"}
+    header = {"Content-Type": "application/json",
+              "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcmNfYWRtaW4iLCJhdWQiOiJQYW5lbCIsImlzcyI6IlBhbmVsIiwiaWF0IjoxNTQzMDU4NTQ4fQ.qKvLZNnLrlW7E63f_nDoN1DtawgXJtH3fc1WJ8_TtRo"}
     data1 = None
     res1 = met.run_main('get', url1, data1, header)
     print(res1)

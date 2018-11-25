@@ -1,8 +1,4 @@
 # -*- coding: UTF-8 -*-
-# 获取Excel列常量
-from dataUtil.operationJson import OperationJson
-
-
 class Get_Constant_xls:
     '''
     .xls 表格的常量参数

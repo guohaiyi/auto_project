@@ -4,7 +4,7 @@ from xlutils.copy import copy
 import os
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
-excelPath = os.path.join(proDir, "Orc_TestCase_test.xlsx")
+excelPath = os.path.join(proDir, "../testData/Orc_dev_TestCase_test.xlsx")
 
 
 class OperationExcel:

@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-from common.dataConfig import Get_Constant_xlsx
+from config.dataConfig import Get_Constant_xlsx
 from dataUtil.operationExcel_openpyxl import OperationExcel
 from dataUtil.operationJson import OperationJson
 

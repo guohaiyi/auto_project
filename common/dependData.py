@@ -2,7 +2,7 @@
 from common.readDepend_data import GetDependData
 from common.readData_xlsx import GetData
 from config.readConfig import ReadConfig
-from common.httpCofing import RunMethod
+from config.httpCofing import RunMethod
 from jsonpath_rw import jsonpath, parse
 import json
 
