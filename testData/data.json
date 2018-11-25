@@ -1,0 +1,203 @@
+{
+  "login": {
+    "username": "haiyi",
+    "password": "123456",
+    "tenant_name": "haiyitenant"
+  },
+  "login1": {
+    "username": "haiyi1",
+    "password": "123456",
+    "tenant_name": "haiyitenant1"
+  },
+  "user": {
+    "user_id": "enduser_qa",
+    "creator": "qa"
+  },
+  "vod_profile": {
+    "profile_name": "vodProfile",
+    "profile_type": "VOD",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": {
+      "codec": "H264",
+      "bitrate": 960,
+      "height": 480,
+      "width": 360
+    },
+    "is_facialDetect_out": true,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "vod_profile_s": {
+    "profile_name": "vodArrayProfile",
+    "profile_type": "VOD",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": [
+      {
+        "codec": "H264",
+        "bitrate": 1600,
+        "height": 720,
+        "width": 1280
+      },
+      {
+        "codec": "H264",
+        "bitrate": 960,
+        "height": 360,
+        "width": 640
+      },
+      {
+        "codec": "H264",
+        "bitrate": 480,
+        "height": 180,
+        "width": 320
+      }
+    ],
+    "is_facialDetect_out": true,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "live_profile": {
+    "profile_name": "liveProfile",
+    "profile_type": "LIVE",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": {
+      "codec": "H264",
+      "bitrate": 960,
+      "height": 480,
+      "width": 360
+    },
+    "is_facialDetect_out": true,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "live_profile_s": {
+    "profile_name": "liveArrayProfile",
+    "profile_type": "LIVE",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": [
+      {
+        "codec": "H264",
+        "bitrate": 1600,
+        "height": 720,
+        "width": 1280
+      },
+      {
+        "codec": "H264",
+        "bitrate": 960,
+        "height": 360,
+        "width": 640
+      },
+      {
+        "codec": "H264",
+        "bitrate": 480,
+        "height": 180,
+        "width": 320
+      }
+    ],
+    "is_facialDetect_out": true,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "update_vod_profile": {
+    "_id": "5bd81c7043cc684421e7df5c",
+    "profile_name": "updateVodProfile",
+    "profile_type": "VOD",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": {
+      "codec": "H264",
+      "bitrate": 96,
+      "height": 48,
+      "width": 36
+    },
+    "is_facialDetect_out": false,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "update_live_profile": {
+    "_id": "5bd81c7043cc684421e7df5c",
+    "profile_name": "updateLiveProfile",
+    "profile_type": "LIVE",
+    "is_default": false,
+    "is_user": true,
+    "is_video_out": true,
+    "is_audio_out": true,
+    "is_transcode": true,
+    "transcode_video_info": {
+      "codec": "H264",
+      "bitrate": 96,
+      "height": 48,
+      "width": 36
+    },
+    "is_facialDetect_out": false,
+    "is_thumbnail_out": true,
+    "transcode_audio_info": {
+      "codec": "AAC-LC",
+      "bitrate": 256,
+      "sampling_rate": 44100,
+      "channel_num": 2
+    }
+  },
+  "orc_login": {
+    "username": "orc_admin",
+    "password": "orc_admin"
+  },
+  "orc_login_fail": {
+    "username": "orc_admin",
+    "password": "123456"
+  },
+  "tenant_db": {
+    "tenant_name": "haiyitenant",
+    "db": "hydb",
+    "is_auto": false,
+    "info": "test"
+  },
+  "tenant_admin": {
+    "username": "haiyi",
+    "password": "123456",
+    "tenant_name": "haiyitenant"
+  }
+}
