@@ -77,7 +77,7 @@ class RunTest:
                 print("编号%s（%s）: 不需要执行" % (no_run_case_id, no_run_case_title))
                 self.data.write_data_actual(i, 'NA')
                 no_run_num.append(i)
-        # 发送邮件
+        # 以邮件方式发送测试报告
         self.sendemail.start_send(pass_num, fail_num)
 
 
