@@ -6,6 +6,7 @@ from common.compareResult import CompareResult
 from common.dependData import DependData
 from common.sendEmail import SendEmail
 import json
+import time
 
 
 class RunTest:
@@ -31,6 +32,7 @@ class RunTest:
         print("总共 %s 个测试用例" % (rows_count - 2))
         print("测试结果：")
         for i in range(3, rows_count + 1):
+            #time.sleep(5)
             is_run = self.data.get_is_run(i)
             is_depend = self.data.get_is_depend(i)
             request_method = self.data.get_request_method(i)
@@ -38,16 +40,16 @@ class RunTest:
             data = self.data.get_request_data(i)
             # print(case_id)
             # print("是否有依赖：%s"%is_depend)
-            if is_depend:
+            if is_run and is_depend:
                 url = run_host + self.data.get_request_url(i) + self.depend.get_data_in_key(i, case_id)
-                # print(url)
+                # print("编号%s的url:%s" % (case_id, url))
             else:
                 url = run_host + self.data.get_request_url(i)
-                # print(url)
-            if i <= 4:
+                # print("编号%s的url:%s"%(case_id, url))
+            if case_id == "DEV-001" or case_id == "CMB-001":
                 header = self.data.get_request_header(i)
             else:
-                header = self.data.get_request_header(i, self.config.get_orc_token())
+                header = self.data.get_request_header(i, self.config.get_token())
             expect_result = self.data.get_expect_result(i)
             if is_run:
                 run_case_id = self.data.get_case_id(i)
@@ -55,11 +57,18 @@ class RunTest:
                 res = self.method.run_main(method=request_method, url=url, data=data, header=header)
                 # print("====>>>")
                 # print(res)
-                if i == 3:
+                # if i == 3:
+                if case_id == "DEV-001":
                     dict_json = json.loads(res)  # 把json数据转换成字典对象
                     orc_token = dict_json['orchestrator_admin_token']
                     # print(dict_json)
-                    self.config.write_orc_token(orc_token)
+                    self.config.write_token(orc_token)
+                    # print(orc_token)
+                if case_id == "CMB-001":
+                    dict_json = json.loads(res)  # 把json数据转换成字典对象
+                    ten_token = dict_json['tenant_admin_token']
+                    # print(dict_json)
+                    self.config.write_token(ten_token)
                     # print(orc_token)
                 if self.com_result.is_contain(res, expect_result):
                     print("编号%s（%s）: 测试通过" % (run_case_id, run_case_title))
@@ -77,8 +86,11 @@ class RunTest:
                 print("编号%s（%s）: 不需要执行" % (no_run_case_id, no_run_case_title))
                 self.data.write_data_actual(i, 'NA')
                 no_run_num.append(i)
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        print("%s 个测试用例被执行" % (len(pass_num+fail_num)))
+        print("%s 个测试用例没有执行" % (len(no_run_num)))
         # 以邮件方式发送测试报告
-        self.sendemail.start_send(pass_num, fail_num)
+        #self.sendemail.start_send(pass_num, fail_num)
 
 
 if __name__ == "__main__":

@@ -138,5 +138,5 @@ class GetData:
 
 if __name__ == "__main__":
     getRequest = GetData()
-    a = getRequest.get_is_depend(7)
+    a = getRequest.get_request_method(8)
     print(a)

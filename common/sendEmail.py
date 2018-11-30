@@ -32,7 +32,6 @@ class SendEmail:
         message['From'] = "{}".format(self.send_user_em)  # 发件人
         message['To'] = ",".join(user_list)  # 收件人
         message['Subject'] = title  # 标题
-
         try:
             server = smtplib.SMTP_SSL(self.email_host, 465)  # 启用SMTP发信
             server.login(self.send_user, self.send_user_pw)  # 登录验证
@@ -52,10 +51,11 @@ class SendEmail:
         print("通过率：", pass_rate)
         print("失败率：", fail_rate)
 
-        user_list = ["omgtest_haiyi@163.com", "18270721318@163.com", "496527978@qq.com"]
+        user_list = ["omgtest_haiyi@163.com", "18270721318@163.com", "1120520290@qq.com"]
         title = "接口测试报告"
         content = "此次测试一共运行了%s个测试用例，通过个数：%s个，失败个数：%s个；通过率为：%s，失败率为：%s" % (
             int(total_number), int(pass_number), int(fail_number), pass_rate, fail_rate)
+        print(content)
         self.send_email(user_list, title, content)
 
 

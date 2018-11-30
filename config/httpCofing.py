@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 import requests
 import json
+import time
 
 
 class RunMethod:
@@ -8,26 +9,26 @@ class RunMethod:
     def get_main(self, url, data=None, header=None):
         res = None
         if header != None:
-            res = requests.get(url=url, params=data, headers=header).json()
+            res = requests.get(url=url, params=data, headers=header, timeout=None).json()
         else:
-            res = requests.get(url=url, params=data).json()
+            res = requests.get(url=url, params=data, timeout=None).json()
         return res
 
     def post_main(self, url, data, header=None):
         res = None
         data = json.dumps(data)
         if header != None:
-            res = requests.post(url=url, data=data, headers=header).json()
+            res = requests.post(url=url, data=data, headers=header, timeout=None).json()
         else:
-            res = requests.post(url=url, data=data).json()
+            res = requests.post(url=url, data=data, timeout=None).json()
         return res
 
     def delete_main(self, url, data=None, header=None):
         res = None
         if header != None:
-            res = requests.delete(url=url, params=data, headers=header).json()
+            res = requests.delete(url=url, params=data, headers=header, timeout=None).json()
         else:
-            res = requests.delete(url=url, params=data).json()
+            res = requests.delete(url=url, params=data, timeout=None).json()
         return res
 
     # def delete_main(self, url, data=None, header=None):
@@ -68,10 +69,10 @@ if __name__ == "__main__":
     # print(token)
 
     # GET示例
-    _id = "5bf9290d750678077e269623"
-    url1 = 'http://192.168.1.188:3002/tenant_admin/' + _id
+    _id = "5bfb96829bbc457279s7d23a9"
+    url1 = 'http://172.16.1.97:3002/tenant_admin/' + _id
     header = {"Content-Type": "application/json",
-              "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcmNfYWRtaW4iLCJhdWQiOiJQYW5lbCIsImlzcyI6IlBhbmVsIiwiaWF0IjoxNTQzMDU4NTQ4fQ.qKvLZNnLrlW7E63f_nDoN1DtawgXJtH3fc1WJ8_TtRo"}
+              "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcmNfYWRtaW4iLCJhdWQiOiJQYW5lbCIsImlzcyI6IlBhbmVsIiwiaWF0IjoxNTQzMjE1MDA1fQ._5dk162ujpOQjrbnAQYHSB71VDvGu46pxsve-nLe1Zc"}
     data1 = None
-    res1 = met.run_main('get', url1, data1, header)
+    res1 = met.get_main(url1, data1, header)
     print(res1)

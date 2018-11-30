@@ -5,7 +5,7 @@ import xlrd
 import os
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
-excelPath = os.path.join(proDir, "../testData/Orc_dev_TestCase_test.xlsx")
+excelPath = os.path.join(proDir, "../testData/Orc_TestCase.xlsx")
 
 
 class GetDependData:

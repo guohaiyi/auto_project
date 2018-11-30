@@ -3,7 +3,7 @@ from openpyxl import load_workbook
 import os
 
 proDir = os.path.split(os.path.realpath(__file__))[0]
-excelPath = os.path.join(proDir, "../testData/Orc_dev_TestCase_test.xlsx")
+excelPath = os.path.join(proDir, "../testData/Orc_TestCase.xlsx")
 
 
 class OperationExcel:
@@ -38,10 +38,13 @@ class OperationExcel:
 
     # 写入数据
     def write_result(self, write_name, row, write_value):
-        wb = load_workbook(filename=self.file_name)
-        ws = wb.active
-        ws[write_name + str(row)] = write_value
-        wb.save(filename=self.file_name)
+        try:
+            wb = load_workbook(filename=self.file_name)
+            ws = wb.active
+            ws[write_name + str(row)] = write_value
+            wb.save(filename=self.file_name)
+        except Exception as e:
+            print("Error:%s"%e)
 
 
 if __name__ == "__main__":
