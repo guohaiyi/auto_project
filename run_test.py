@@ -90,7 +90,7 @@ class RunTest:
         print("%s 个测试用例被执行" % (len(pass_num+fail_num)))
         print("%s 个测试用例没有执行" % (len(no_run_num)))
         # 以邮件方式发送测试报告
-        #self.sendemail.start_send(pass_num, fail_num)
+        self.sendemail.start_send(pass_num, fail_num)
 
 
 if __name__ == "__main__":
